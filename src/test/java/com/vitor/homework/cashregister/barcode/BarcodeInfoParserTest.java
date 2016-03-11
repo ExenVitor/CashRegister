@@ -1,12 +1,12 @@
 package com.vitor.homework.cashregister.barcode;
 
-import com.google.gson.Gson;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by Vitor Chen on 16-3-12.
