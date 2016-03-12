@@ -44,6 +44,10 @@ public abstract class BaseStrategy {
                 && mPromProducts.contains(productID);
     }
 
+    public void clearPromProduct(){
+        mPromProducts.clear();
+    }
+
     public void setPriority(int priority) {
         this.mPriority = priority;
     }
