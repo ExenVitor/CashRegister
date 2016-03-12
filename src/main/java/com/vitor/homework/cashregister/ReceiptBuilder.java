@@ -28,9 +28,9 @@ public class ReceiptBuilder {
 
     private static final String GROUP_INFO = "名称：%s，数量：%d%s";
 
-    private static final String TOTAL = "总计：%0.2f(元)";
+    private static final String TOTAL = "总计：%.2f(元)";
 
-    private static final String TOTAL_SAVED_AMOUNT = "节省：%0.2f(元)";
+    private static final String TOTAL_SAVED_AMOUNT = "节省：%.2f(元)";
 
     /**
      * key: Promotion ID
@@ -46,7 +46,7 @@ public class ReceiptBuilder {
         init();
     }
 
-    private void init(){
+    private void init() {
         mGroupInfoMap.clear();
         mTotal = 0;
         mTotalSaved = 0;
@@ -64,10 +64,11 @@ public class ReceiptBuilder {
 
             traverseGroupInfoMap(strategyMap, stringBuilder);
 
-            stringBuilder.append(String.format(TOTAL, mTotal));
+            stringBuilder.append(String.format(TOTAL, mTotal)).append("\n");
 
-            if(mTotalSaved > 0){
-                stringBuilder.append(String.format(TOTAL_SAVED_AMOUNT, mTotalSaved));
+            if (mTotalSaved > 0) {
+                stringBuilder.append(String.format(TOTAL_SAVED_AMOUNT, mTotalSaved))
+                        .append("\n");
             }
 
             stringBuilder.append(END);
@@ -133,7 +134,7 @@ public class ReceiptBuilder {
             Set<String> strategyIDs = mGroupInfoMap.keySet();
             for (String id : strategyIDs) {
                 BaseStrategy strategy = strategyMap.get(id);
-                sb.append(strategy.getPromDescription()).append("：");
+                sb.append(strategy.getPromDescription()).append("：\n");
                 ArrayList<String> infoGroup = mGroupInfoMap.get(id);
                 for (String info : infoGroup) {
                     sb.append(info).append("\n");
