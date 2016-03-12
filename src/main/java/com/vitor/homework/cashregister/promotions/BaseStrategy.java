@@ -22,7 +22,9 @@ public abstract class BaseStrategy {
     /**
      * The abstract class of promotion strategy
      *
-     * @param priority
+     * @param priority When a product in two different promotion list,
+     *                 cash register will apply higher priority strategy for
+     *                 the product.
      * @param description Promotion description, can be used for group print
      */
     public BaseStrategy(int priority, String description) {
