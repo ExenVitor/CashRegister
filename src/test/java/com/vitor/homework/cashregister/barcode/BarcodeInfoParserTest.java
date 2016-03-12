@@ -43,9 +43,9 @@ public class BarcodeInfoParserTest {
         Assert.assertNull(infoArray);
 
         invalidStr = "[ 'ITEM000001'," +
-                    " 'ITEM24df4'," +
-                    " '1ITEM3435'," +
-                    " 'ITEM24324-4' ]";
+                " 'ITEM24df4'," +
+                " '1ITEM3435'," +
+                " 'ITEM24324-4' ]";
         infoArray = parseInput(parser, invalidStr);
         Assert.assertNull(infoArray);
 
@@ -66,17 +66,17 @@ public class BarcodeInfoParserTest {
         infoArray = parseInput(parser, validStr);
 
         assertNotNull(infoArray);
-        assertEquals(infoArray.size(), 3);
+        assertEquals(3, infoArray.size());
 
         for (BarcodeInfo info : infoArray) {
             String productID = info.getProductID();
             int num = info.getNum();
             if ("ITEM000001".equals(productID)) {
-                assertEquals(info.getNum(), 5);
+                assertEquals(5, info.getNum());
             } else if ("ITEM000003".equals(productID)) {
-                assertEquals(num, 2);
+                assertEquals(2, num);
             } else if ("ITEM000005".equals(productID)) {
-                assertEquals(num, 3);
+                assertEquals(3, num);
             }
         }
     }
