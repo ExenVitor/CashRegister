@@ -1,5 +1,6 @@
 package com.vitor.homework.cashregister.barcode;
 
+import com.vitor.homework.cashregister.Constants;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -51,17 +52,7 @@ public class BarcodeInfoParserTest {
 
 
         //valid input
-        String validStr = "[" +
-                "    'ITEM000001'," +
-                "    'ITEM000001'," +
-                "    'ITEM000001'," +
-                "    'ITEM000001'," +
-                "    'ITEM000001'," +
-                "    'ITEM000003-2'," +
-                "    'ITEM000005'," +
-                "    'ITEM000005'," +
-                "    'ITEM000005'" +
-                "]";
+        String validStr = Constants.BARCODE_JSON;
 
         infoArray = parseInput(parser, validStr);
 
