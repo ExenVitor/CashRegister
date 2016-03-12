@@ -16,7 +16,7 @@ public class DiscountStrategyTest {
     @Test
     public void testCalcSaleResult() throws Exception {
         float percentOff = 0.05f;
-        BaseStrategy strategy = new DiscountStrategy(1, "95% off", percentOff);
+        BaseStrategy strategy = new DiscountStrategy(1, "5% off", percentOff);
 
         float price = 10.f;
         ProductInfo productInfo =
