@@ -15,7 +15,7 @@ public class Constants {
             new ProductInfo("ITEM000005", "可口可乐", "瓶", 3.f);
 
     public static final ProductInfo APPLE =
-            new ProductInfo("ITEM000005", "苹果", "斤", 5.5f);
+            new ProductInfo("ITEM000003", "苹果", "斤", 5.5f);
 
     public static final String BARCODE_JSON =
                     "[\n" +
