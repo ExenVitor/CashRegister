@@ -10,11 +10,13 @@ import com.vitor.homework.cashregister.utils.Utils;
 public class ProductInfo {
     private String mProductID;
     private String mName;
+    private String mUnit;
     private float mPrice;
 
-    public ProductInfo(String productID, String name, float price) {
+    public ProductInfo(String productID, String name, String unit, float price) {
         this.mProductID = productID;
         this.mName = name;
+        this.mUnit = unit;
         this.mPrice = price;
     }
 
@@ -34,6 +36,14 @@ public class ProductInfo {
         this.mName = name;
     }
 
+    public String getUnit(){
+        return mUnit;
+    }
+
+    void setUnit(String unit){
+        this.mUnit = unit;
+    }
+
     public float getPrice() {
         return mPrice;
     }
@@ -44,6 +54,7 @@ public class ProductInfo {
 
     public boolean isValidProduct() {
         return !Utils.isStringEmpty(mProductID)
+                && !Utils.isStringEmpty(mUnit)
                 && !Utils.isStringEmpty(mName)
                 && mPrice >= 0;
     }
